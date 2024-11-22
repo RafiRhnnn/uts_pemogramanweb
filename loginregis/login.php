@@ -1,43 +1,50 @@
-    <?php
-    // Mengambil koneksi dari koneksi.php
-    require_once '../koneksi.php';
+<?php
+// Mengambil koneksi dari koneksi.php
+require_once '../koneksi.php';
 
-    $error = '';
+session_start(); // Mulai session
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+$error = '';
 
-        try {
-            // Query untuk memeriksa username
-            $sql = "SELECT * FROM user WHERE username = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $username);
-            $stmt->execute();  
-            $result = $stmt->get_result();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-            if ($result->num_rows > 0) {
-                $user = $result->fetch_assoc();
-                // Verifikasi password menggunakan SHA1
-                if (sha1($password) === $user['password']) {
-                    // Login berhasil, arahkan ke dashboard
-                    header("Location: ../lib/dashboard.php"); // Ganti dengan halaman dashboard
-                    exit();
-                } else {
-                    $error = "Password salah.";
-                }
+    try {
+        // Query untuk memeriksa username
+        $sql = "SELECT * FROM user WHERE username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();  
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            // Verifikasi password menggunakan SHA1
+            if (sha1($password) === $user['password']) {
+                // Simpan data username dan email ke dalam session
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['email'] = $user['email'];
+                
+                // Login berhasil, arahkan ke dashboard
+                header("Location: ../lib/dashboard.php"); // Ganti dengan halaman dashboard
+                exit();
             } else {
-                $error = "Username tidak ditemukan.";
+                $error = "Password salah.";
             }
-
-            $stmt->close();
-
-        } catch (Exception $e) {
-            // Menangkap dan menampilkan error
-            $error = "Terjadi kesalahan: " . $e->getMessage();
+        } else {
+            $error = "Username tidak ditemukan.";
         }
+
+        $stmt->close();
+
+    } catch (Exception $e) {
+        // Menangkap dan menampilkan error
+        $error = "Terjadi kesalahan: " . $e->getMessage();
     }
-    ?>
+}
+?>
+
 
     <!DOCTYPE html>
     <html lang="en">
