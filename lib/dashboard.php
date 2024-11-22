@@ -1,12 +1,7 @@
 <?php
 require '../koneksi.php';
-session_start(); // Mulai session
-
-// Ambil data dari session
-$username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-$email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+require 'pesan.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -176,38 +171,28 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
         </div>
         <div class="row justify-content-center">
             <div class="kontak col-md-7">
-                <form>
+                <form method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nama Lengkap</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="name"
-                            value="<?php echo htmlspecialchars($username); ?>"  
-                            readonly
-                        />
+                        <input type="text" class="form-control" id="name" value="<?php echo htmlspecialchars($username); ?>" readonly />
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="email"
-                            value="<?php echo htmlspecialchars($email); ?>" 
-                            readonly  
-                        />
+                        <input type="email" class="form-control" id="email" value="<?php echo htmlspecialchars($email); ?>" readonly />
                     </div>
                     <div class="mb-3">
                         <label for="pesan" class="form-label">Pesan</label>
-                        <textarea class="form-control" id="Pesan" rows="3"></textarea>
+                        <textarea class="form-control" id="pesan" name="pesan" rows="3" required></textarea>
                     </div>
                     <button type="submit" class="btn">Kirim</button>
+                    <?php if ($message): ?>
+                        <div class="alert alert-info mt-3"><?php echo $message; ?></div>
+                    <?php endif; ?>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
 
     <!-- kontak selesai -->
 
