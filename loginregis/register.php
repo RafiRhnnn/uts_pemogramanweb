@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="bg-light">
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
-            <h3 class="text-center mb-4">Register</h3>
+            <h3 class="text-center mb-4 text-light">Register</h3>
             <?php if ($message): ?>
                 <div class="alert alert-info"><?php echo $message; ?></div>
             <?php endif; ?>
