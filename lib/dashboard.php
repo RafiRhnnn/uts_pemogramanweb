@@ -18,7 +18,7 @@ require 'pesan.php';
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="../style/styledasboard.css" />
+  <link rel="stylesheet" href="../style/dashboard.css" />
   <title>M RAFI RAIHAN</title>
 </head>
 
@@ -274,7 +274,7 @@ require 'pesan.php';
       &copy;Copyright by
       <a
         href="https://github.com/RafiRhnnn"
-        class="text-white fw-bold">22552011233_Muhammad Rafi Raihan_TIF 22 CID</a>
+        class="cpr fw-bold">22552011233_Muhammad Rafi Raihan_TIF 22 CID</a>
     </p>
   </footer>
   <!-- footer selesai -->
