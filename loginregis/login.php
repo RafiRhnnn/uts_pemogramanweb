@@ -75,11 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <p class="text-center mt-3">Belum punya akun? <a href="register.php" class="daftar ">daftar di sini</a>.</p>
                             <button type="submit" class="btn btn-primary w-100">Login</button>
                         </form>   
-                    </div>
                 </div>
-            </section>
-        <footer class="bg-dark text-light text-center py-3 mt-5">
-        <p>&copy; 2024 - Your Company Name. All Rights Reserved.</p>
+            </div>
+        </section>
+        <footer class="text-light text-center py-3 mt-5">
+        <p>&copy;Copyright by <a class="cpr fw-bold" href="https://github.com/RafiRhnnn">22552011233_Muhammad Rafi Raihan_TIF 22 CID</a></p>
      </footer>   
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>

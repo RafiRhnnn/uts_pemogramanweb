@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Nov 2024 pada 19.12
+-- Waktu pembuatan: 23 Nov 2024 pada 13.20
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -24,6 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `pesan`
+--
+
+CREATE TABLE `pesan` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `pesan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `pesan`
+--
+
+INSERT INTO `pesan` (`id`, `username`, `email`, `pesan`) VALUES
+(13, 'schutze', 'rafi@gmail.com', 'wqrwqrjhiyuerbeb'),
+(14, 'schutze', 'rafi@gmail.com', 'kamu jago banget main bola nya!!!\r\n'),
+(15, 'schutze', 'rafi@gmail.com', 'kamu jago banget main bola nya!!!\r\n'),
+(16, 'schutze', 'rafi@gmail.com', 'kamu jago banget main bola nya!!!\r\n'),
+(17, 'schutze', 'rafi@gmail.com', 'tes kirim'),
+(18, 'schutze', 'rafi@gmail.com', 'tes lagi');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -40,11 +65,19 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`) VALUES
 (1, 'rafirhnnn', 'asd@gmail.com', 'f865b53623b121fd34ee5426c792e5c33af8c227'),
-(2, 'rafirhn', 'asd@gmail.com', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8');
+(2, 'rafirhn', 'asd@gmail.com', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8'),
+(3, 'rafi', 'rafi@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997'),
+(6, 'schutze', 'rafi@gmail.com', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `pesan`
+--
+ALTER TABLE `pesan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `user`
@@ -57,10 +90,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `pesan`
+--
+ALTER TABLE `pesan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

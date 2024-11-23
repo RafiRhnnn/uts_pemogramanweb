@@ -31,16 +31,26 @@ body {
 
 .form {
     color: white;
-    font-weight: bold;
 }
 
 /* Style untuk footer */
 footer {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent footer background */
-    color: white;
-    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent footer background */
+    height: 30px; /* Tinggi spesifik */
+    line-height:2px; /* Untuk memusatkan teks secara vertikal */
     text-align: center;
     width: 100%; 
     position: fixed;
     bottom: 0;
 }
+ 
+.cpr:hover {
+    color: blue;
+}
+
+.cpr{
+    color: white;
+    text-decoration: none; 
+
+}
+
