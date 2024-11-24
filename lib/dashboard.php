@@ -79,31 +79,49 @@ require 'pesan.php';
   </section>
   <!-- akhir jumbotron -->
 
-  <!-- about -->
-  <section id="about">
+  <!-- About Section -->
+  <section id="about" class="py-5">
     <div class="container">
-      <div class="row text-center mb-3">
-        <div class="about col">
-          <h2>About Me</h2>
+      <div class="row text-center mb-4">
+        <div class="col">
+          <h2 class="fw-bold mt-5">Tentang Saya</h2>
         </div>
       </div>
-      <div class="row justify-content-center fs-5 text-center">
-        <div class="col-md-4">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo itaque veniam aliquam saepe nulla, voluptatum sint possimus. Ut temporibus pariatur repellendus sed! Ab culpa ullam vitae magni? Tempore, accusamus corrupti.
+            Halo, saya <strong>Muhammad Rafi Raihan</strong>, seorang mahasiswa kelas <strong>TIF 22 CID</strong> di <strong>Universitas Teknologi Bandung</strong>. Saya memiliki minat besar dalam dunia teknologi informasi dan pengembangan web. Saya berusaha untuk selalu belajar hal-hal baru dan memperluas keterampilan saya di bidang ini.
+          </p>
+          <p>
+            Saya percaya bahwa teknologi adalah alat yang kuat untuk membangun solusi yang bermanfaat bagi masyarakat. Dengan dedikasi dan komitmen, saya berharap dapat terus berkembang dan memberikan kontribusi terbaik di dunia teknologi.
           </p>
         </div>
-        <div class="col-md-4">
+      </div>
+      <div class="row text-center mt-4">
+        <div class="col">
+          <h3 class="fw-bold">Visi & Misi</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h4>Visi</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Laudantium rerum ad sit cumque, ipsam labore nobis quisquam saepe
-            ullam error, beatae ratione aliquid quas sequi?
+            Menjadi profesional di bidang teknologi informasi yang mampu berkontribusi dalam menciptakan inovasi dan solusi berbasis teknologi.
           </p>
+        </div>
+        <div class="col-md-6">
+          <h4>Misi</h4>
+          <ul class="text-start">
+            <li>Selalu belajar dan memperbarui pengetahuan di dunia teknologi.</li>
+            <li>Mengembangkan proyek-proyek yang bermanfaat bagi masyarakat.</li>
+            <li>Berpartisipasi dalam komunitas teknologi dan berbagi ilmu.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
-  <!-- about selesai -->
+  <!-- End About Section -->
+
 
   <!-- galery -->
   <section id="galery">
@@ -142,7 +160,7 @@ require 'pesan.php';
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="../image/ms3.JPG" class="card-img-top"/>
+            <img src="../image/ms3.JPG" class="card-img-top" />
             <div class="card-body">
               <p class="card-text">
                 Some quick example text to build on the card title and make up
@@ -258,7 +276,7 @@ require 'pesan.php';
               <textarea class="form-control" id="pesan" name="pesan" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn">Kirim</button>
-            <?php if ($message):?>
+            <?php if ($message): ?>
             <?php endif; ?>
           </form>
         </div>
